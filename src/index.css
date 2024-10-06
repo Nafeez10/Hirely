@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+    @apply dark:bg-black dark:text-[#e9e9e9]
+  }
+}
+
+@layer components{
+  .active-nav::after{
+    content: '';
+    @apply  bg-black dark:bg-[#e9e9e9]  h-1  rounded-t-md absolute w-full max-lg:-bottom-0 -bottom-2
+  }
+  .focus-anim-span{
+    @apply h-[2px] w-full scale-0 transition
+  }
+  .focus-anim-inp:focus ~ .focus-anim-span{
+    @apply scale-100
+  }
+  .sign-out{
+    @apply hidden
+  }
+  .user-hover:hover{
+    .sign-out{
+      @apply block
+    }
+  }
+  .nav{
+    @apply  cursor-pointer gap-1  w-[5.2rem] flex flex-col items-center brightness-0 dark:brightness-100
+  }
+  .rotate-events:hover{
+    .rotate-plus {
+      @apply rotate-180 
+    }
+  }
+  .google-btn-home{
+    @apply text-slate-600 dark:dark-mode-d-text transition-none dark:dark-mode-bg dark-mode-hover-bg hover:bg-slate-50 transition dark:hover:text-slate-400 hover:text-slate-800 max-sm:w-full sm:w-[80%] flex gap-2.5 md:w-[70%]  border-slate-600 border-[3px] mt-3 justify-center items-center  py-4 rounded-full
+  }
+  .google-btn-login{
+    @apply text-slate-600 dark:dark-mode-d-text transition-none dark:dark-mode-bg dark-mode-hover-bg hover:bg-slate-50 dark:hover:text-slate-400 hover:text-slate-800 flex gap-2.5 w-full  border-slate-600 border-[3px] mt-3 justify-center items-center  py-[.8rem] rounded-full
+  }
+  .file-btn-image-cont{
+    @apply w-full h-full cursor-pointer
+  }
+  .file-btn{
+    @apply text-transparent relative
+  }
+  .file-btn::before{
+    @apply text-red-700  w-full absolute top-0 bottom-0 left-0 right-0 h-full
+  }
+  .user-img-not{
+    @apply h-20 w-20 absolute -bottom-[50%] left-[50%] translate-x-[-50%] dark:dark-mode-bg bg-white p-4 rounded-full
+  }
+  .user-img-present{
+    @apply h-20 w-20 absolute -bottom-[50%] left-[50%] translate-x-[-50%] dark:dark-mode-bg bg-white p-1 rounded-full
+  }
+  .img-modal-container{
+    @apply  w-6 flex h-5 items-center relative cursor-pointer hover:opacity-100
+  }
+  .input-img-cont{
+    @apply mt-5 mb-2 w-full px-5 h-52 flex justify-center relative
+  }
+  .post-modal-box{
+    @apply  overflow-y-auto pb-5 rounded-[.150rem] mx-auto mt-20 bg-white dark:dark-mode-bg max-h-[80vh] min-h-[300px] w-[35%] xl:w-[40%] lg:w-[55%] md:w-[65%] max-md:w-[80%] max-sm:w-[95%];
+  }
+  .post-modal-box::-webkit-scrollbar{
+    background-color: rgba(32, 32, 32, 0.242);
+    width: 8px;
+  }
+  .post-modal-box::-webkit-scrollbar-thumb{
+    background-color:rgba(0, 0, 0, 0.355);
+  }
+  .delete-element{
+    @apply absolute top-[100%] right-0  text-sm border-2 dark:dark-mode-border rounded-md
+  }
+  .eclipse-element:hover .delete-element{
+    display: block;
+  }
+  .new-user-btn{
+    @apply flex items-center dark:dark-mode-border justify-center gap-2.5 w-36 gray-bg px-5 py-2  rounded-md transition duration-100
+  }
+  .new-user-btn:active{
+    @apply scale-90
+  }
+  .new-user-navigate-btn{
+    @apply flex items-center gap-1 justify-center gray-bg w-36 py-2 transition dark:dark-mode-bg
+  }
+  .new-user-navigate-btn:active{
+    @apply scale-90
+  }
+  .new-user-navigate-btn:hover .navigate-btn-svg{
+
+  }
+  .dark-mode-btn{
+    @apply  border-2 p-2 rounded-full transition active:scale-90
+  }
+  .svg{
+    @apply brightness-0 dark:brightness-100
+  }
+  .dark-mode-d-text{
+    @apply text-[#ffffffdb]
+  }
+  .dark-mode-hover-bg{
+    @apply dark:hover:bg-neutral-900
+  }
+}
+
+@layer utilities{
+  .dark-mode-border{
+    @apply border-[#ffffff1d]
+  }
+  .signIn-border{
+    border: 2px solid #0a66c2
+  }
+  .google-boxshadow{
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%),
+    inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0);
+  }
+  .gray-text{
+    @apply text-[#393939ba];
+  }
+  .gray-border{
+    @apply border-[#1919192b]
+  }
+  .blue-text{
+    @apply text-[#75b3f2]
+  }
+  .dark-gray-bg{
+    @apply bg-[#393939ba]
+  }
+  .gray-bg{
+    @apply bg-[#00000009]
+  }
+  .in-blue-text{
+    @apply text-[#2977c9]
+  }
+  .blue-bg{
+    @apply bg-[#2977c9]
+  }
+  .dark-blue-bg{
+    @apply bg-[#094585]
+  }
+  .logo-font{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .dark-blue-text{
+    @apply text-[#117bec]
+  }
+  
+  .pop-in-delay{
+    animation-delay: 1.5s;
+    animation-name: pop-in-delay;
+    animation-fill-mode: forwards;
+  }
+  .dark-mode-text{
+    @apply text-[#e9e9e9]
+  }
+  .dark-mode-bg{
+    @apply bg-[#1b1f23]
+  }
+  @keyframes pop-in-delay {
+    from{
+      opacity: 0;
+      transform: scale(.95);
+    }
+    to{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes loadingAnim {
+    from{
+      transform: translateX(-10%);
+    }
+    to{
+      transform: translateX(110%);
+    }
+  }
+  @keyframes pop-in {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in {
+    from{
+      opacity: 0;
+      transform: translateX(-10%)
+    }
+    to{
+      opacity: 1;
+      transform: translate3d(0%);
+    }
+  }
+  @keyframes bounce-in {
+    0%{
+      opacity: 0;
+      scale: .8;
+    }
+    2.5%{
+      opacity: 1;
+      scale: 1.2;
+    }
+    5%{
+      opacity: 1;
+      scale: .9;
+    }
+    7.5%{
+      opacity: 1;
+      scale: 1.1;
+    }
+    10%{
+      opacity: 1;
+      scale: 1;
+    }
+    90%{
+      opacity: 1;
+      scale: 1;
+      
+    }
+    92.5%{
+      opacity: 1;
+      scale: 1.2;
+    }
+    100%{
+      opacity: 0;
+      scale: .2;
+      display: none;
+    }
+  }
+  @keyframes fade-in {
+    from{
+      transform: translateX(-20%);
+      opacity: 0;
+    }
+    to{
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+ 
+}
+
+
