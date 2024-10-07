@@ -29,7 +29,7 @@ const SignUpPage = () =>{
     const signUpBtnHandeler = async (e:MouseEvent<HTMLButtonElement,MouseEvent>) =>{
         e.preventDefault();
 
-        if(!signUpEmail.trim()){
+        if(!signUpEmail.trim() || !signUpPassword.trim()){
             toast(
                 "Type Email and Password",
                 {

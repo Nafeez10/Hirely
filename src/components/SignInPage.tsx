@@ -30,7 +30,7 @@ const SignInPage = () =>{
     const signInBtnHandeler = async (e:MouseEvent<HTMLButtonElement,MouseEvent>) =>{
         e.preventDefault();
 
-        if(!signInEmail.trim()){
+        if(!signInEmail.trim() || !signInPassword.trim()){
             toast(
                 "Type Email and Password",
                 {
