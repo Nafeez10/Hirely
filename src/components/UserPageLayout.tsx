@@ -1,11 +1,20 @@
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import Header from "./Header";
 import { useLocation } from "react-router";
 import Footer from "./Footer";
+import { useEffect } from "react";
+import { auth } from "../config/firebase.config";
 
 const UserPageLayout = () =>{
     
     const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(!auth.currentUser){
+            navigate('/')
+        }
+    },[])
 
     return(
         <>
