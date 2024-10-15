@@ -21,7 +21,7 @@ const NavElements = ( { label, navImg, path, activeNav, setActiveNav }:propsType
         <>  
             <Link onClick={navChangeHandeler} className={ activeNav == path ? "nav opacity-100 active-nav relative" : "nav opacity-55 hover:opacity-75"} to={path}>
                     <img className="w-6" src={navImg} alt="" />
-                    <span className="text-nowrap   ">
+                    <span className="text-nowrap text-[.7rem] ">
                         {label}
                     </span>
             </Link>

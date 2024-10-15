@@ -79,7 +79,7 @@ const SignOut = ({userImgURL}:propsType) =>{
             <div  className=" relative w-[5.1rem] max-sm:w-[4.1rem]  gap-1 flex flex-col items-center   ">
                 <img className="rounded-full h-6 " src={userImgURL ? userImgURL : userSvg} alt="" />
                 <div className="flex items-center cursor-pointer ">
-                    <span>
+                    <span className=" text-[.7rem]">
                         Me
                     </span>
                     <div className="w-4 ">
